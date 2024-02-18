@@ -33,7 +33,7 @@ const TemperatureAndDetails = ({
           <div className="flex font-light text-sm items-center justify-center">
             <FaTemperatureFull size={18} className="mr-1" />
             Feels like:
-            <span className="font-medium ml-1"> {parseInt(feels_like)}°</span>
+            <span className="font-medium ml-1">{parseInt(feels_like)}°</span>
           </div>
           <div className="flex font-light text-sm items-center justify-center">
             <BsDropletHalf size={18} className="mr-1" />
@@ -52,23 +52,26 @@ const TemperatureAndDetails = ({
         <p className="font-light">
           Rise:{" "}
           <span className="font-medium ml-1">
-            {formatToLocalTime(sunrise, timezone)}
+            {formatToLocalTime(sunrise, timezone, "hh:mm a")}
           </span>
         </p>
         <p className="font-light">|</p>
         <TbSunset2 size={18} />
         <p className="font-light">
-          Set: <span className="font-medium ml-1">06:45 PM</span>
+          Set:{" "}
+          <span className="font-medium ml-1">
+            {formatToLocalTime(sunset, timezone, "hh:mm a")}
+          </span>
         </p>
         <p className="font-light">|</p>
         <IoSunnyOutline size={18} />
         <p className="font-light">
-          High: <span className="font-medium ml-1">45°C</span>
+          High: <span className="font-medium ml-1">{parseInt(temp_max)}°</span>
         </p>
         <p className="font-light">|</p>
         <IoSunnyOutline size={18} />
         <p className="font-light">
-          Low: <span className="font-medium ml-1">35°C</span>
+          Low: <span className="font-medium ml-1">{parseInt(temp_min)}°</span>
         </p>
       </div>
     </div>
